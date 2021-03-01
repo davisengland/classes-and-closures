@@ -159,7 +159,7 @@ class Machine {
   constructor() {
     this.widgets_made_count = 0
     this.wear_and_tear_count = 0
-    this.needs_roboot = false
+    this.needs_reboot = false
   }
 
   makeWidgets(num) {
@@ -168,13 +168,13 @@ class Machine {
   }
 
   fixMachine() {
-    this.needs_roboot = true
+    this.needs_reboot = true
   }
 
   reboot() {
-    return function() {
+    return () => {
       this.wear_and_tear_count -= 10
-      this.needs_roboot = false
+      this.needs_reboot = false
     }
   }
 }
